@@ -171,12 +171,12 @@ a {
   width: 100%;
   object-fit: cover;
 }
-    .greetings img {
-        height: 6vw;
-        width: 6vw;
-        object-fit: cover;
-        display: block;
-    }
+.greetings img {
+    height: 6vw;
+    width: 6vw;
+    object-fit: cover;
+    display: block;
+  }
 .aboutsection {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -772,8 +772,8 @@ a {
       background-color: #ffdfb6;
   }
    .menupdf {
-    padding: 1rem 2.5rem;
-    font-size: 0.8vw;
+    padding: 1rem 1.7rem;
+    font-size: 1.4vw;
   }
   .coffeeItem {
     gap: 0rem;
