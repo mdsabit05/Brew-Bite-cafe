@@ -1,0 +1,1075 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+html ,body {
+  max-width: 100%;
+  overflow-x: hidden;
+
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #f0e0c7;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.15);
+  padding-top: 60px;
+  transition: all 0.4s ease-in-out;
+  z-index: 999;
+  opacity: 0.9;
+}
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 15px 25px;
+  font-size: 1.5vw;
+  text-decoration: none;
+  color: #4d2504;
+  transition: all 0.3s ease;
+  letter-spacing: 2px;
+}
+
+.sidebar a:hover {
+  background: #bd7313;
+  color: #ffffff;
+  padding-left: 35px;
+}
+
+.toggle-btn {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1000;
+  color: #4d2504;
+  transition: transform 0.3s ease;
+}
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 1rem;
+  font-size: 3rem;
+  cursor: pointer;
+  color: #783701;
+  transition: transform 0.3s ease;
+}
+.sidebar a {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+.sidebar.active a {
+  animation: slideIn 0.5s forwards;
+}
+.sidebar.active a:nth-child(1) { animation-delay: 0.1s; }
+.sidebar.active a:nth-child(2) { animation-delay: 0.2s; }
+.sidebar.active a:nth-child(3) { animation-delay: 0.3s; }
+.sidebar.active a:nth-child(4) { animation-delay: 0.4s; }
+.sidebar.active a:nth-child(5) { animation-delay: 0.5s; }
+.sidebar.active a:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+/* ...First page... */
+
+#page1 {
+  background-color: #ffdfb6;
+}
+.heroSection {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  gap: 1rem;
+  padding-left: 0em;
+}
+.greetings {
+  padding: 2rem;
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  margin-top: 2.5vw;
+}
+.greetings img {
+  height: 11vw;
+  width: 11vw;
+  object-fit: cover;
+  display: none;
+}
+.greetings h1 {
+  font-family: 'Playfair Display', serif;
+  color: rgb(42, 24, 0);
+  font-size:7vw;
+  letter-spacing: 3px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;;
+}
+.greetings h1:hover {
+  transform: scale(1.08);
+}
+.greetings h3 {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(65, 37, 1);
+  font-size:3vw;
+  letter-spacing: 5px;
+  margin-top: 1vw;
+}
+.greetings h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size:1.8vw;
+  margin-top: 0.5em;
+  color: rgb(65, 37, 1);
+  letter-spacing: 2px;
+}
+.greetings .viewMenu {
+  margin-top: 2em;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 20px;
+  font-size: 1.3vw;
+  /* background: #bd7313; */
+   background-color: #cf8626;
+  color: rgb(39, 23, 3);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease-out;
+}
+.greetings .viewMenu:hover {
+  transform: scale(1.05);
+  color: white;
+  background-color: #b05819;
+}
+.heroImage {
+  grid-column: 2;
+  border: none;
+  align-self: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.heroImage img {
+  height: 29vw;
+  width: 100%;
+  object-fit: cover;
+}
+    .greetings img {
+        height: 6vw;
+        width: 6vw;
+        object-fit: cover;
+        display: block;
+    }
+.aboutsection {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  background-color: #d1b693;
+  grid-template-areas: 
+  "about qualityLogo"
+  "about qualityLogoname";
+}
+.abouttext {
+  font-family: 'Poppins', sans-serif;
+  grid-area: about;
+  letter-spacing: 1px;
+  padding: 2rem;
+  padding-bottom: 2.5rem;
+  padding-top: 1.5rem;
+  font-size: 1.5vw;
+}
+.about h2 {
+    color: rgb(65, 37, 1);
+}
+.aboutimg img {
+  display: none;
+  height: 35vw;
+  width: 30vw;
+}
+.quality {
+  padding-top: 6vw;
+}
+.qualityLogo {
+  grid-area: qualityLogo;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  text-align: center;
+  
+}
+.qualityLogoname {
+  grid-area: qualityLogoname;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing:1px ;
+  color: rgb(80, 47, 2);
+  margin-left: 23px;
+  margin-top: 6px;
+}
+.qualityLogo img {
+  height: 4rem;
+  width: 4rem;
+  object-fit: cover;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(80, 47, 2);
+  letter-spacing: 1px;
+}
+.pagedevider {
+  height: 0.5rem;
+  background: linear-gradient(to right, #d2b48c, #6f4e37, #d2b48c);
+}
+
+/* ...second page... */
+
+
+#page2 {
+  /* height: 100vh; */
+  background-color:#ddb786;
+  font-family: 'Poppins', sans-serif;
+}
+.menupageHeader {
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  padding: 3rem;
+  padding-bottom: 1rem;
+}
+.menupageHeader h2 {
+    transition: transform 0.3s ease-out;
+}
+.menupageHeader h2:hover {
+  transform: scale(1.04);
+}
+.menuHeadingright {
+  display: flex;
+  flex-direction: row;
+  gap: 7rem;
+  padding-top: 0rem;
+  font-family: 'Poppins', sans-serif;
+}
+.menuHeadingright h3 {
+   transition: transform 0.3s ease-out;
+}
+.menuHeadingright h3:hover {
+  transform: scale(1.2);
+}
+.menuHeadingleft {
+  margin-left: 1rem;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+}
+.menuHeadingleft h2 {
+  font-size: 2.5vw;
+  margin-left: 0.5rem;
+}
+.menuHeadingright {
+  font-size: 1.3vw;
+  padding-top: 1vw;
+  padding-left: 7vw;
+}
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+}
+.menuBox1 , .menuBox2 , .menuBox3 {
+  background-color: rgb(242, 223, 197);
+  height: auto;
+  border-radius: 8px;
+}
+.boxheader {
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  padding: 1rem;
+  position: relative;
+  color: #291608;
+  margin-bottom: 1vw;
+}
+.boxheader::after {
+  content: "";
+  display: block;
+  width: 25vw;         
+  height: 2px;             
+  background: #6f4e37;   
+  margin: 6px auto -15px;     
+  border-radius: 2px;      
+}
+.coffeemenu {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr) 0.5fr;
+  gap: 0.7rem;
+  padding: 1rem;
+  padding-top: 0rem;
+}
+.coffeeItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.itemimg {
+  height: 7vw;
+  width: 12vw;
+  border-radius: 1vw;
+  transition: transform 0.3s ease-out;
+  cursor: pointer;
+}
+
+.itemimg:hover {
+  transform: scale(1.05) translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.18), 0 2px 4px rgba(0,0,0,0.12);
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+.itemimg img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1vw;
+}
+
+.itemprice {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3vw;
+  color: rgb(65, 37, 1);
+  text-align: left;
+  padding: 1.5rem 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease-out;
+}
+.itemprice:hover {
+  transform: scale(1.05);
+}
+.menupdf {
+  font-size: 1vw;
+  /* background-color: rgb(200, 118, 10); */
+   background-color: #cf8626;
+  color: rgb(22, 13, 2);
+  padding: 1rem 5.5rem;
+  text-decoration: none;
+  border-radius: 12px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease-out;
+}
+.menupdf:hover {
+  background-color: #ac571b;
+  transform: scale(1.03);
+  color: white;
+}
+
+/* ...Third page... */
+
+#page3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 4vw;
+  background-color: #ffdfb6;
+  padding-bottom: 14vh;
+ 
+}
+#page3 h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3vw;
+  padding: 1vw;
+  color: rgb(121, 80, 27);
+}
+.gallery {
+  padding-left: 2.5vw;
+}
+.pics {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 2rem;
+ padding: 1vw;
+}
+.pic1 , .pic2 , .pic3 , .pic4 , .pic5 , .pic6 {
+  border: 6px solid;
+  border-image: linear-gradient(to right, #8e6a51, #5f4829) 1;
+  height: 13vw;
+  width: 13vw;
+  transition: transform 0.3s ease-out;
+  cursor: pointer;
+}
+.pic1 {
+  background-image: url('image/picc1.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+.pic2 {
+   background-image: url('image/piccc.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+.pic3 {
+  background-image: url('image/picimg.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+.pic4 {
+  background-image: url('image/picc.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+.pic5 {
+  background-image: url('image/coffee-shop-393954_1280.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.pic5 {
+  background-image: url('image/coffee-shop-393954_1280.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.pic6 {
+  background-image: url('image/NYC_Oct19_41.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.pic1:hover , .pic2:hover , .pic3:hover , .pic4:hover , .pic5:hover , .pic6:hover {
+  transform: scale(1.05);
+}
+#reservation h2 {
+  padding-left: 4.5vw;
+}
+.info {
+  display: grid;
+  gap: 10px;
+  background: transparent;
+  padding: 1.5vw;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 10px;
+  gap: 1rem;
+  border: 2px solid #ca9e60;
+
+}
+.info input,
+.info textarea {
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 1.3vw;
+  color:rgb(118, 118, 118);
+}
+.info button {
+  color: #291608;
+  /* background-color: rgb(200, 118, 10); */
+   background-color: #cf8626;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.25vw;
+  cursor: pointer;
+  transition: transform 0.3s ease-out;
+}
+.info button:hover {
+  background-color: #ac571b;
+  color: white;
+  transform: scale(1.02);
+}
+
+.footer {
+  background-color: #845534; 
+  color: #ffffff;             
+  text-align: center;
+  padding: 2vh 0;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+
+
+
+@media (max-width: 960px) {
+   #page1 {
+    background-color: #ffdfb6;
+  }
+  .heroSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;   
+    padding: 0rem;
+    padding-top: 1vw;
+
+  }
+   .greetings .viewMenu {
+    font-size: 2vw;
+    margin-top: 1rem;
+  }
+.greetings img {
+  height: 11vw;
+  width: 11vw;
+  object-fit: cover;
+  display: block;
+}
+  .heroImage {
+    display: none;
+  }
+
+  .greetings {
+    margin-top: 0;
+    padding: 0rem;
+  }
+
+  .greetings h1 {
+    font-size: 8vw; 
+  }
+  .greetings h3 {
+    font-size: 4vw;
+  }
+
+  .greetings h4 {
+    font-size: 3.5vw;
+  }
+  .aboutsection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "abouttext aboutimg"
+    "abouttext quality";
+    background-color: #ffdfb6;
+    margin-top: 1rem;
+    padding-bottom: 0rem;
+  }
+
+  .quality {
+    padding-top: 0vw;
+    grid-area: quality;
+}
+.qualityLogo img {
+  border: 2px solid black;
+  padding: 1VW;
+  height: 8vw;
+  width: 8vw;
+}
+.qualityLogoname {
+  font-size: 2vw;
+}
+.abouttext {
+  grid-area: abouttext;
+  font-size: 2.5vw;
+}
+.aboutimg {
+  grid-area: aboutimg;
+  padding-left: 12vw;
+}
+.aboutimg img {
+  display: block;
+  height: 33vw;
+  width: 30vw;
+  background: transparent;
+
+}
+  .about h2 {
+    font-size: 4.5vw;
+  }
+  #page2 {
+      background-color: #ffdfb6;
+  }
+.menu {
+  justify-content: normal;
+  gap: 1rem;
+  padding-left: 0vw;
+}
+.menuHeadingleft h2 {
+    font-size: 5vw;
+    margin-left: 0.5rem;
+}
+  .menuHeadingright {
+  font-size: 2vw;
+  padding-top: 2vw;
+  padding-left: 9vw;
+  gap: 3rem;
+    }
+  .menupdf {
+    padding: 1rem 2.5rem
+  }
+  .coffeeItem {
+    gap: 1rem;
+  }
+  .coffeemenu {
+    gap: 1rem;
+  }
+  .coffeemenu1 {
+    gap: 2.8rem;
+  }
+  .boxheader {
+    font-size : 3vw;
+  }
+  .itemimg {
+    height: 11vw;
+    width: 15vw;
+  }
+  .itemprice {
+    font-size: 2vw;
+  }
+  .menupdf {
+    font-size: 2vw;
+    padding: 1rem 1.5rem;
+    
+  }
+  #page3 {
+    background-color: #ffdfb6;
+    display: flex;
+    flex-direction: column;
+  }
+  .pic1, .pic2, .pic3, .pic4, .pic5, .pic6 {
+    border: 6px solid;
+    border-image: linear-gradient(to right, #6f4e37, #d2b48c) 1;
+    height: 26vw;
+    width: 29vw;
+  }
+  .info {
+    gap: 0.8rem;
+    padding: 1rem;
+    max-width: 71vw;
+  }
+  .info input,
+  .info textarea {
+    font-size: 2.5vw;
+  }
+  .info button {
+    font-size: 2.5vw;
+    padding: 0.8rem;
+}
+  
+  #page3 h2 {
+    font-size: 5vw;
+    padding-left: 4vw;
+  }
+  .gallery {
+    margin-bottom: 2vw;
+  }
+  #reservation h2 {
+    padding-top: 1vw;
+    padding-left: 6vw;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 290px;
+    left:  -290px;
+  }
+   .sidebar a {
+  font-size: 5.5vw;
+  width: 290px;
+  }
+  .toggle-btn {
+    font-size: 46px;
+  }
+  #page1 {
+    background-color: #ffdfb6;
+  }
+  .heroSection {
+    padding-top: 1rem;
+    margin-bottom: 2rem;
+  }
+  .aboutsection {
+    display: flex;
+    flex-direction: column-reverse;
+    background : transparent;
+    }
+    .abouttext {
+      font-size: 3vw;
+    }
+    
+  .greetings h1 {
+    font-size: 12vw; 
+  }
+  .greetings h3 {
+    font-size: 5vw;
+  }
+
+  .greetings h4 {
+    font-size: 4vw;
+  }
+  .greetings .viewMenu {
+    font-size: 4vw;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  } 
+  .greetings img {
+  height: 15vw;
+  width: 15vw;
+  object-fit: cover;
+  display: block;
+}
+.aboutsection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "abouttext aboutimg"
+    "abouttext quality";
+    background-color: #ffdfb6;
+    margin-top: 1rem;
+    padding-bottom: 0rem;
+  }
+
+  .quality {
+    padding-top: 0vw;
+    grid-area: quality;
+}
+.qualityLogo img {
+  border: 2px solid black;
+  padding: 1VW;
+  height: 8vw;
+  width: 8vw;
+}
+.qualityLogoname {
+  font-size: 2vw;
+}
+.abouttext {
+  grid-area: abouttext;
+  font-size: 2.5vw;
+  padding-right: 0vw;
+  padding-bottom: 0vw;
+}
+.aboutimg {
+  grid-area: aboutimg;
+  padding-left: 8vw;
+ 
+}
+.aboutimg img {
+  display: block;
+  height: 33vw;
+  width: 30vw;
+  background: transparent;
+
+}
+  .about h2 {
+    font-size: 4.5vw;
+  }
+  #page2 {
+      background-color: #ffdfb6;
+  }
+   .menupdf {
+    padding: 1rem 2.5rem;
+    font-size: 0.8vw;
+  }
+  .coffeeItem {
+    gap: 0rem;
+  }
+  .coffeemenu {
+    gap: 1rem;
+  }
+  .itemprice {
+    font-size: 1.7vw;
+    padding: 0.5rem 1rem;
+  }
+  .itemimg {
+    height: 10vw;
+    width: 14vw;
+  }
+
+  .menu {
+    justify-content: normal;
+    gap: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  .menupageHeader {
+    padding-left: 4vw;
+  }
+  .menuHeadingleft h2 {
+    font-size: 5vw;
+  }
+  .menuHeadingright {
+    gap: 2.5rem;
+    padding-left: 7vw;
+    padding-top: 2vw;
+    font-size: 2.3vw;
+  }
+  .pic1, .pic2, .pic3, .pic4, .pic5, .pic6 {
+    border: 6px solid;
+    border-image: linear-gradient(to right, #6f4e37, #d2b48c) 1;
+    height: 24vw;
+    width: 26vw;
+  }
+  .gallery {
+    padding-left: 6.5vw;
+    margin-bottom: 5vw;
+  }
+  #page3 {
+      background-color: #ffdfb6;
+  }
+  #page3 h2 {
+  font-size: 4vw;
+  padding-left: 1vw;
+  font-size: 6vw;
+  }
+  #reservation h2 {
+    padding-top: 4vw;
+    padding-left: 3vw;
+  }
+  .info {
+    margin-top: 3vw;
+    max-width: 501px;
+    border: 2px solid #dd894d;
+    padding: 1rem;
+  }
+  .info input , .info textarea {
+    font-size: 2.7vw;
+    }
+  .info button {
+    font-size: 2.7vw;
+    padding: 0.8rem;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .abouttext {
+    padding-right: 0vw;
+    padding-bottom: 0vw;
+  }
+  .abouttext h2 {
+    font-size: 5vw;
+  }
+    
+      .aboutimg {
+        grid-area: aboutimg;
+        padding-left: 8vw;
+        padding-top: 5vw;
+    }
+        .quality {
+        padding-bottom: 3vw;
+        grid-area: quality;
+    }
+    .aboutimg img {
+        display: block;
+        height: 29vw;
+        width: 31vw;
+        background: transparent;
+    }
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding-left: 2vw;
+
+
+    }
+    .menupageHeader {
+    display: flex;
+    flex-direction: column;
+    padding-left: 6vw;
+  }
+    .menuHeadingleft h2 {
+      font-size: 7.5vw;
+    }
+    .menuHeadingright {
+      font-size: 3vw;
+        gap: 1.4rem;
+        padding-left: 6vw;
+    }
+        .boxheader {
+        font-size: 3vw;
+    }
+        .itemimg {
+        height: 12vw;
+        width: 18vw;
+    }
+    .coffeemenu {
+        gap: 1.3rem;
+    }
+        .itemprice {
+        font-size: 2.3vw;
+        padding: 0.5rem 1rem;
+    }
+
+      .coffeemenu1 {
+        gap: 1.3rem;
+    }
+}
+
+
+
+@media (max-width: 450px) {
+  .sidebar {
+    width: 220px;
+    left: -220px;
+  }
+  .sidebar a {
+  font-size: 5.5vw;
+   width: 220px;
+  }
+  .toggle-btn {
+    font-size: 35px;
+  }
+  #page1 {
+    background-color: #ffdfb6;
+  }
+  .heroSection {
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .greetings h1 {
+    font-size: 12vw; 
+  }
+  .greetings h3 {
+    font-size: 5vw;
+  }
+  
+  .greetings h4 {
+    font-size: 4vw;
+    padding-top: 1.5vw;
+  }
+  .greetings .viewMenu {
+    font-size: 4vw;
+    margin-top: 2rem;
+    margin-bottom: 3.7rem;
+    background-color: #cf8626;
+  } 
+  .greetings img {
+  height: 15vw;
+  width: 15vw;
+  object-fit: cover;
+  display: block;
+}
+.aboutsection {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+  "quality quality"
+  "abouttext aboutimg";
+  background-color: #ffdfb6;
+  margin-top: 1rem;
+  padding-bottom: 0rem;
+}
+.abouttext {
+  padding-left: 3vw;
+  padding-right: 0vw;
+  padding-bottom: 5vw;
+}
+.aboutimg img {
+    display: block;
+    height: 37vw;
+    width: 35vw;
+}
+.aboutimg {
+  grid-area: aboutimg;
+  padding-left: 0vw;
+  padding-top: 20vw;
+}
+.abouttext h2 {
+  font-size: 7vw;
+}
+    .qualityLogo img {
+    border: 2px solid black;
+    padding: 1vw;
+    height: 14vw;
+    width: 14vw;
+}
+    .qualityLogoname {
+        font-size: 3vw;
+    }
+
+  #page2 {
+    background-color: #f8d6aa;
+  }
+  .menupageHeader {
+    display: flex;
+    flex-direction: column;
+    padding-left: 6vw;
+  }
+  .menuHeadingleft h2 {
+  font-size: 8vw;
+  }
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-left: 0rem;
+  }
+  .menuHeadingright {
+    gap: 1rem;
+    padding-left: 3vw;
+    font-size: 3.3vw;
+  }
+  .boxheader{
+    text-align: center;
+
+  }
+  .menupdf {
+    font-size: 4vw;
+    padding: 0.8rem 2rem;
+    padding-left: 4rem;
+  }
+  .itemimg {
+    height: 26vw;
+    width: 35vw;
+    }
+    .itemprice {
+    font-size: 5vw;
+  }
+      .boxheader {
+        font-size: 6vw;
+    }
+  .coffeeItem {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  #page3 {
+    background-color: #f8d6aa;
+  }
+  #page3 h2 {
+    font-size: 9vw;
+    padding-left: 8vw;
+  }
+ .pic1, .pic2, .pic3, .pic4, .pic5, .pic6 {
+  border: 6px solid;
+  height: 37vw;
+  width: 43vw;
+  }
+  .pics {
+    gap: 0.8rem;
+    padding: 0rem;
+  }
+  .info {
+    max-width: 93vw;
+    border: 2px solid #a1683f;
+    padding: 1rem;
+  }
+  .info input , .info textarea {
+    font-size: 4vw;
+  }
+  .info button {
+    font-size: 5vw;
+    padding: 0.8rem;
+  }
+  .footer {
+     font-size: 3.5vw;
+  }
+}
+
+
